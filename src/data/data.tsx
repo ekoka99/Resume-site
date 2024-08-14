@@ -12,14 +12,7 @@ import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import heroImage from '../images/header-background.jpg';
 import profilepic from '../images/profilepic.jpg';
-import {
-  About,
-  Hero,
-  HomepageMeta,
-  SkillGroup,
-  Social,
-  TimelineItem,
-} from './dataDef';
+import {About, Hero, HomepageMeta, SkillGroup, Social, TimelineItem} from './dataDef';
 
 /**
  * Page meta data
@@ -50,10 +43,13 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        As a <strong className="text-stone-100">Robotics Systems and Testing Engineer</strong>, operating out of the metro-Detroit area, I'm currently leveraging my expertise at <strong className="text-stone-100">Wheel.me</strong>. My expertise lies in advancing and streamlining cutting-edge autonomous guided vehicle technology.
+        As a <strong className="text-stone-100">Robotics Systems and Testing Engineer</strong>, operating out of the
+        metro-Detroit area, I'm currently leveraging my expertise at{' '}
+        <strong className="text-stone-100">Wheel.me</strong>. My expertise lies in advancing and streamlining
+        cutting-edge autonomous guided vehicle technology.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training at the <strong className="text-stone-100">gym</strong> 🏋️, 
+        In my free time time, you can catch me training at the <strong className="text-stone-100">gym</strong> 🏋️,
         playing with my <strong className="text-stone-100">2 cats</strong> 🐈 🐈‍⬛, or exploring breathtaking{' '}
         <strong className="text-stone-100">Michigan</strong> 🧤.
       </p>
@@ -182,12 +178,18 @@ export const education: TimelineItem[] = [
   {
     date: 'May 2022',
     location: 'Michigan State University',
-    title: (<><span style={{fontStyle: 'italic'}}>Bachelor of Science</span> in Computational Mathematics</>) as unknown as string,    content: <p>
-    Specialized in machine learning and computer vision, with a strong foundation in 
-    mathematical modeling and algorithm development. Completed advanced coursework in 
-    neural networks, image processing, and data analysis. Developed projects 
-    including an undetectable AI powered aimbot for the online game CS:GO.
-  </p>,
+    title: (
+      <>
+        <span style={{fontStyle: 'italic'}}>Bachelor of Science</span> in Computational Mathematics
+      </>
+    ) as unknown as string,
+    content: (
+      <p>
+        Specialized in machine learning and computer vision, with a strong foundation in mathematical modeling and
+        algorithm development. Completed advanced coursework in neural networks, image processing, and data analysis.
+        Developed projects including an undetectable AI powered aimbot for the online game CS:GO.
+      </p>
+    ),
   },
 ];
 
@@ -198,9 +200,8 @@ export const experience: TimelineItem[] = [
     title: 'Robotics Test Engineer',
     content: (
       <p>
-        Leveraging expertise in mechatronics and hardware infrastructure to enhance and validate 
-        cutting-edge autonomous guided vehicle technology, focusing on optimizing and automating 
-        critical processes in robotics systems.
+        Leveraging expertise in mechatronics and hardware infrastructure to enhance and validate cutting-edge autonomous
+        guided vehicle technology, focusing on optimizing and automating critical processes in robotics systems.
       </p>
     ),
   },
@@ -210,9 +211,9 @@ export const experience: TimelineItem[] = [
     title: 'Robot Bringup Engineer',
     content: (
       <p>
-        Spearheaded end-of-line validation and automation for AI-powered robots, reducing bring-up 
-        times by 83% through strategic implementation of Python and Bash scripts, while ensuring 
-        exceptional stability across software, hardware, and electrical subsystems.
+        Spearheaded end-of-line validation and automation for AI-powered robots, reducing bring-up times by 83% through
+        strategic implementation of Python and Bash scripts, while ensuring exceptional stability across software,
+        hardware, and electrical subsystems.
       </p>
     ),
   },
@@ -222,9 +223,9 @@ export const experience: TimelineItem[] = [
     title: 'IT Support Engineer',
     content: (
       <p>
-        Managed and optimized multi-site network infrastructure, automating OS and software 
-        deployment while providing comprehensive support for hundreds of devices, significantly 
-        enhancing operational efficiency and system reliability.
+        Managed and optimized multi-site network infrastructure, automating OS and software deployment while providing
+        comprehensive support for hundreds of devices, significantly enhancing operational efficiency and system
+        reliability.
       </p>
     ),
   },
@@ -234,9 +235,8 @@ export const experience: TimelineItem[] = [
     title: 'Technical Support Specialist',
     content: (
       <p>
-        Delivered expert-level support for TechSmith products across platforms, collaborating 
-        with development teams to address user needs and contributing to product improvement 
-        through detailed feedback and documentation.
+        Delivered expert-level support for TechSmith products across platforms, collaborating with development teams to
+        address user needs and contributing to product improvement through detailed feedback and documentation.
       </p>
     ),
   },
@@ -246,9 +246,9 @@ export const experience: TimelineItem[] = [
     title: 'IT Specialist Intern',
     content: (
       <p>
-        Supported large multi-site network operations, assisted with ticket triage, and contributed 
-        to the implementation and maintenance of IT systems and processes, enhancing overall 
-        infrastructure efficiency and user experience.
+        Supported large multi-site network operations, assisted with ticket triage, and contributed to the
+        implementation and maintenance of IT systems and processes, enhancing overall infrastructure efficiency and user
+        experience.
       </p>
     ),
   },
@@ -258,9 +258,9 @@ export const experience: TimelineItem[] = [
     title: 'RHS Information Services Technician',
     content: (
       <p>
-        Provided comprehensive technical support across the university, troubleshooting and 
-        maintaining a diverse range of devices. Delivered exceptional customer service while 
-        diagnosing and resolving complex technical issues for staff and faculty.
+        Provided comprehensive technical support across the university, troubleshooting and maintaining a diverse range
+        of devices. Delivered exceptional customer service while diagnosing and resolving complex technical issues for
+        staff and faculty.
       </p>
     ),
   },

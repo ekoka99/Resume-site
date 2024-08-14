@@ -1,8 +1,9 @@
-import { FC, memo, ReactNode } from 'react';
-import { TimelineItem as TimelineItemType } from '../../../data/dataDef';
+import {FC, memo, ReactNode} from 'react';
 
-const TimelineItem: FC<{ item: TimelineItemType }> = memo(({ item }) => {
-  const { title, date, location, content } = item;
+import {TimelineItem as TimelineItemType} from '../../../data/dataDef';
+
+const TimelineItem: FC<{item: TimelineItemType}> = memo(({item}) => {
+  const {title, date, location, content} = item;
 
   return (
     <div className="flex flex-col pb-8 text-center last:pb-0 md:text-left">
