@@ -57,7 +57,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: 'https://drive.google.com/uc?export=download&id=1y4EvAsm_VXLM3XvhxGPcdZxgWhffwv5Y',
+      href: 'https://drive.usercontent.google.com/download?id=1y4EvAsm_VXLM3XvhxGPcdZxgWhffwv5Y&export=download&authuser=0',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -75,7 +75,7 @@ export const aboutData: About = {
     {label: 'Location', text: 'Royal Oak, MI', Icon: MapIcon},
     {label: 'Age', text: '25', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Albanian', Icon: FlagIcon},
-    {label: 'Interests', text: 'Cooking, Movies, Video Games, and Gym', Icon: SparklesIcon},
+    {label: 'Interests', text: 'Cooking, Movies, Video Games, and Reading', Icon: SparklesIcon},
     {label: 'Study', text: 'Michigan State University', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'Wheel.me', Icon: BuildingOffice2Icon},
   ],
