@@ -2,9 +2,8 @@
 // https://github.com/vercel/next.js/blob/master/packages/next/next-server/server/config.ts
 const nextConfig = {
   output: 'export',
-  assetPrefix: '/Resume-site/',  // Replace 'Resume-site' with your actual repository name
-  basePath: '/Resume-site',      // Replace 'Resume-site' with your actual repository name
-
+  assetPrefix: '/Resume-site/',
+  basePath: '/Resume-site',
   webpack: config => {
     const oneOfRule = config.module.rules.find(rule => rule.oneOf);
     // Next 12 has multiple TS loaders, and we need to update all of them.
@@ -24,12 +23,13 @@ const nextConfig = {
   swcMinify: true,
   trailingSlash: false,
   images: {
-    unoptimized: true,  // This is important for static export
+    unoptimized: true, // This is important for static export
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-      },{
+      },
+      {
         protocol: 'https',
         hostname: 'source.unsplash.com',
       },
