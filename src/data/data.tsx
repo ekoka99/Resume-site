@@ -57,7 +57,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: 'https://drive.usercontent.google.com/download?id=1y4EvAsm_VXLM3XvhxGPcdZxgWhffwv5Y&export=download',
+      href: 'https://drive.google.com/file/d/1y4EvAsm_VXLM3XvhxGPcdZxgWhffwv5Y/view',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
