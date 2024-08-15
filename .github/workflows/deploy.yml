@@ -3,22 +3,27 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # This is correct if your default branch is 'main'
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Updated to v3
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3  # Updated to v3
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'  # This is fine if your project uses Node.js 16
+          node-version: '18.17.0'  # Updated to meet Next.js 14.2.5 requirements
+
+      - name: Clean npm cache and remove package-lock.json
+        run: |
+          npm cache clean --force
+          rm -f package-lock.json
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Build project
         run: yarn build
@@ -27,4 +32,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out  # This is correct for Next.js static export
+          publish_dir: ./out
