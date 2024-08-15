@@ -57,7 +57,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: 'https://drive.google.com/file/d/1y4EvAsm_VXLM3XvhxGPcdZxgWhffwv5Y/view',
+      href: 'https://nbviewer.org/github/ekoka99/Resume-site/blob/40aa924c20d0c986ffbd85cb2a790b0fcf3724c3/public/Elio%20Koka%20Autonomy%20and%20AI%20Test%20Engineer%20Resume.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
