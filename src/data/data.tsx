@@ -62,12 +62,6 @@ export const heroData: Hero = {
     primary: true,
     Icon: ArrowDownTrayIcon,
   },
-  {
-    href: 'https://nbviewer.org/github/ekoka99/Resume-site/blob/40aa924c20d0c986ffbd85cb2a790b0fcf3724c3/public/Elio%20Koka%20Autonomy%20and%20AI%20Test%20Engineer%20Resume.pdf',
-    text: 'Deploy to GitHub Pages',
-    primary: false,
-    Icon: ArrowDownTrayIcon,
-  },
 ],
 };
 
