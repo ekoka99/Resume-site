@@ -140,7 +140,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'Docker',
-        level: 8,
+        level: 9,
       },
       {
         name: 'MySQL/MongDB',
