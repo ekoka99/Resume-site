@@ -29,7 +29,7 @@ export const SectionId = {
   Hero: 'hero',
   About: 'about',
   Skills: 'skills',
-  Resume: 'resume',
+  : '',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -57,7 +57,7 @@ export const heroData: Hero = {
   ),
   actions: [
   {
-    href: 'https://nbviewer.org/github/ekoka99/Resume-site/blob/b391898ac62d50e3068d7ed34cf4be9137df947c/public/Elio%20Koka%20SW%3AFW%20System%20integration%20engineer%20resume.pdf',
+    href: 'https://nbviewer.org/github/ekoka99/Resume-site/blob/main/public/ElioKoka_IntegrationTestEngineerSr_Resume.pdf',
     text: 'Resume',
     primary: true,
     Icon: ArrowDownTrayIcon,
