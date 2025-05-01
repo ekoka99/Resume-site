@@ -43,15 +43,14 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        As a <strong className="text-stone-100">Robotics Systems and Testing Engineer</strong>, operating out of the
-        metro-Detroit area, I'm currently leveraging my expertise at{' '}
-        <strong className="text-stone-100">Wheel.me</strong>. My expertise lies in advancing and streamlining
-        cutting-edge autonomous guided vehicle technology.
+        As a <strong className="text-stone-100">Systems Integration and Testing Engineer</strong>, operating out of the
+        Sunnyvale / South Bay area, I've most recently leveraged my expertise at{' '}
+        <strong className="text-stone-100">Wheel.me</strong>. My expertise lies in advancing the integration and testing of complex AI driven systems.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         In my free time time, you can catch me training at the <strong className="text-stone-100">gym</strong> 🏋️,
-        playing with my <strong className="text-stone-100">2 cats</strong> 🐈 🐈‍⬛, or exploring breathtaking{' '}
-        <strong className="text-stone-100">Michigan</strong> 🧤.
+        playing with my <strong className="text-stone-100">2 cats</strong> 🐈 🐈‍⬛, or exploring beautiful{' '}
+        <strong className="text-stone-100">San Francisco</strong> 🌉.
       </p>
     </>
   ),
@@ -70,14 +69,14 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Hardworking and innovating robotics engineer who's always keen on picking up whatever new skills are necessary to get the job done. I'm a quick learner and a team player who's always ready to take on new challenges, with strong interpersonal skills to influence and guide technical and non-technical stakeholders`,
+  description: `Hardworking and innovating engineer who's always keen on picking up whatever new skills are necessary to get the job done. I'm a quick learner and a team player who's always ready to take on new challenges, with strong interpersonal skills to influence and guide technical and non-technical stakeholders`,
   aboutItems: [
-    {label: 'Location', text: 'Royal Oak, MI', Icon: MapIcon},
+    {label: 'Location', text: 'Sunnyvale, CA', Icon: MapIcon},
     {label: 'Age', text: '25', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Albanian', Icon: FlagIcon},
     {label: 'Interests', text: 'Cooking, Movies, Video Games, and Reading', Icon: SparklesIcon},
     {label: 'Study', text: 'Michigan State University', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Wheel.me', Icon: BuildingOffice2Icon},
+    {label: 'Employment', text: 'Looking for my next role', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -195,7 +194,7 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: 'April 2024 - Present',
+    date: 'April 2024 - May 2025',
     location: 'wheel.me, Detroit, Michigan',
     title: 'Robotics Test Engineer',
     content: (
