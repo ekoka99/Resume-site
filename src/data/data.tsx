@@ -2,15 +2,15 @@ import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
   BuildingOffice2Icon,
-  CalendarIcon,
-  FlagIcon,
+  CommandLineIcon,
+  CpuChipIcon,
   MapIcon,
-  SparklesIcon,
+  RocketLaunchIcon,
+  WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import heroImage from '../images/header-background.jpg';
 import profilepic from '../images/profilepic.jpg';
 import {About, Hero, HomepageMeta, SkillGroup, Social, TimelineItem} from './dataDef';
 
@@ -18,8 +18,9 @@ import {About, Hero, HomepageMeta, SkillGroup, Social, TimelineItem} from './dat
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Elio Koka | Senior Robotics Systems & Integration Engineer',
+  description:
+    'Elio Koka builds and scales robotic systems across hardware, software, manufacturing, automation, and test.',
 };
 
 /**
@@ -28,6 +29,7 @@ export const homePageMeta: HomepageMeta = {
 export const SectionId = {
   Hero: 'hero',
   About: 'about',
+  Impact: 'impact',
   Skills: 'skills',
   Resume: 'resume',
 } as const;
@@ -38,30 +40,32 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  * Hero section
  */
 export const heroData: Hero = {
-  imageSrc: heroImage,
-  name: `Hey, I'm Elio Koka 👋`,
+  name: `I build and scale robotic systems.`,
   description: (
     <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        As a <strong className="text-stone-100">Systems Integration and Testing Engineer</strong>, operating out of the
-        Sunnyvale / South Bay area, I've most recently leveraged my expertise at{' '}
-        <strong className="text-stone-100">Wheel.me</strong>. My expertise lies in advancing the integration and testing of complex AI driven systems.
+      <p>
+        Hi, I&apos;m Elio. I work across hardware, software, manufacturing, and test. Right now, I&apos;m building
+        production and automation systems for humanoids at Foundation.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training at the <strong className="text-stone-100">gym</strong> 🏋️,
-        playing with my <strong className="text-stone-100">2 cats</strong> 🐈 🐈‍⬛, or exploring beautiful{' '}
-        <strong className="text-stone-100">San Francisco</strong> 🌉.
+      <p>
+        I&apos;m looking for a senior or founding engineering role with real ownership—from deciding what matters to
+        getting it working in production.
       </p>
     </>
   ),
   actions: [
-  {
-    href: 'https://nbviewer.org/github/ekoka99/Resume-site/blob/main/public/ElioKoka_IntegrationTestEngineerSr_Resume.pdf',
-    text: 'Resume',
-    primary: true,
-    Icon: ArrowDownTrayIcon,
-  },
-],
+    {
+      href: '/Resume-site/Elio_Koka_Senior_Systems_Integration.pdf',
+      text: 'View résumé',
+      primary: true,
+      Icon: ArrowDownTrayIcon,
+    },
+    {
+      href: '/Resume-site/#impact',
+      text: 'See the impact',
+      Icon: RocketLaunchIcon,
+    },
+  ],
 };
 
 /**
@@ -69,102 +73,187 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Hardworking and innovating engineer who's always keen on picking up whatever new skills are necessary to get the job done. I'm a quick learner and a team player who's always ready to take on new challenges, with strong interpersonal skills to influence and guide technical and non-technical stakeholders`,
+  description:
+    'I like the messy part: where hardware, software, manufacturing, and test meet. That is where I do my best work—bringing up new systems, finding root causes, and turning one-off fixes into tools the team can keep using.',
   aboutItems: [
-    {label: 'Location', text: 'Sunnyvale, CA', Icon: MapIcon},
-    {label: 'Age', text: '25', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Albanian', Icon: FlagIcon},
-    {label: 'Interests', text: 'Cooking, Movies, Video Games, and Reading', Icon: SparklesIcon},
-    {label: 'Study', text: 'Michigan State University', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Looking for my next role', Icon: BuildingOffice2Icon},
+    {label: 'Based in', text: 'Redwood City, CA', Icon: MapIcon},
+    {label: 'Building', text: 'Humanoid production systems at Foundation', Icon: BuildingOffice2Icon},
+    {label: 'Experience', text: '8+ years across robotics, manufacturing, and systems', Icon: WrenchScrewdriverIcon},
+    {label: 'Platforms', text: 'Humanoids, AGVs, and autonomous agricultural robots', Icon: CpuChipIcon},
+    {label: 'Core leverage', text: 'Integration, automation, diagnostics, and production test', Icon: CommandLineIcon},
+    {label: 'Education', text: 'B.S. Computational Mathematics, Michigan State', Icon: AcademicCapIcon},
   ],
 };
+
+export const impactHighlights = [
+  {
+    value: '30×',
+    label: 'Faster firmware upgrades',
+    detail: 'Parallel CAN flashing reduced a 1.5-hour humanoid update workflow to under 3 minutes.',
+  },
+  {
+    value: '83%',
+    label: 'Faster robot bring-up',
+    detail: 'Python and Bash automation transformed end-of-line integration for autonomous agricultural robots.',
+  },
+  {
+    value: '20%',
+    label: 'Less fleet downtime',
+    detail: 'Automated diagnostics exposed AGV failure patterns while cutting manual validation time by 33%.',
+  },
+];
 
 /**
  * Skills section
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Software',
+    name: 'Robotics Integration',
     skills: [
       {
-        name: 'Python',
+        name: 'System bring-up & production integration',
         level: 10,
       },
       {
-        name: 'C++',
-        level: 8,
+        name: 'Hardware, firmware & software interfaces',
+        level: 10,
       },
       {
-        name: 'MATLAB',
-        level: 7,
+        name: 'CAN diagnostics & firmware workflows',
+        level: 9,
       },
       {
-        name: 'Shell Scripting',
+        name: 'Root cause analysis & FMEA',
+        level: 9,
+      },
+      {
+        name: 'Production readiness',
         level: 9,
       },
     ],
   },
   {
-    name: 'Hardware & Electronics',
+    name: 'Automation & Validation',
     skills: [
       {
-        name: 'Mechatronics',
-        level: 7,
-      },
-      {
-        name: 'Computer Networking',
-        level: 8,
-      },
-      {
-        name: 'Hardware Infrastructure',
+        name: 'Python & Bash automation',
         level: 9,
       },
       {
-        name: 'System Architecture',
+        name: 'HIL, functional & end-of-line testing',
+        level: 9,
+      },
+      {
+        name: 'Calibration & parallel flashing',
+        level: 9,
+      },
+      {
+        name: 'Diagnostic pipelines & QC logging',
+        level: 9,
+      },
+      {
+        name: 'Vision-based inspection integration',
         level: 8,
       },
     ],
   },
   {
-    name: 'Tools & Platforms',
+    name: 'Manufacturing Systems',
     skills: [
       {
-        name: 'Git',
+        name: 'MES, eDHR & product genealogy',
         level: 9,
       },
       {
-        name: 'Azure DevOps (CI/CD)',
+        name: 'BOM, inventory & traceability',
+        level: 9,
+      },
+      {
+        name: 'ACID data logic & retention',
+        level: 9,
+      },
+      {
+        name: '3D work instructions & QC workflows',
         level: 8,
       },
       {
-        name: 'Docker',
-        level: 9,
-      },
-      {
-        name: 'MySQL/MongDB',
-        level: 7,
+        name: 'Lean manufacturing & production readiness',
+        level: 8,
       },
     ],
   },
   {
-    name: 'Robotics & Control Systems',
+    name: 'Software & Infrastructure',
     skills: [
       {
-        name: 'Computer Vision',
+        name: 'Python, C & Bash',
+        level: 9,
+      },
+      {
+        name: 'Application auth & test coverage',
+        level: 9,
+      },
+      {
+        name: 'MongoDB, S3 & Azure',
         level: 8,
       },
       {
-        name: 'Machine Learning',
-        level: 7,
+        name: 'Git, CircleCI, Jenkins & CI/CD',
+        level: 8,
       },
       {
-        name: 'Systems Integration',
-        level: 10,
+        name: 'Linux, Windows, macOS & networking',
+        level: 8,
+      },
+    ],
+  },
+  {
+    name: 'Platforms & Hardware',
+    skills: [
+      {
+        name: 'Humanoids, AGVs & autonomous robots',
+        level: 9,
       },
       {
-        name: 'Test Engineering and Automation',
-        level: 10,
+        name: 'NVIDIA Thor, ARM, x86 & RISC-V',
+        level: 8,
+      },
+      {
+        name: 'Actuators, sensors, servos & BMS',
+        level: 9,
+      },
+      {
+        name: 'Raspberry Pi test instrumentation',
+        level: 8,
+      },
+      {
+        name: 'Mobility, perception & power subsystems',
+        level: 9,
+      },
+    ],
+  },
+  {
+    name: 'Technical Ownership',
+    skills: [
+      {
+        name: 'Problem framing & architecture',
+        level: 9,
+      },
+      {
+        name: 'Cross-functional execution',
+        level: 9,
+      },
+      {
+        name: 'Vendor specification & procurement',
+        level: 8,
+      },
+      {
+        name: 'Manufacturing & operations partnership',
+        level: 9,
+      },
+      {
+        name: 'Documentation & team enablement',
+        level: 9,
       },
     ],
   },
@@ -184,9 +273,8 @@ export const education: TimelineItem[] = [
     ) as unknown as string,
     content: (
       <p>
-        Specialized in machine learning and computer vision, with a strong foundation in mathematical modeling and
-        algorithm development. Completed advanced coursework in neural networks, image processing, and data analysis.
-        Developed projects including an undetectable AI powered aimbot for the online game CS:GO.
+        Built a foundation in mathematical modeling, machine learning, computer vision, and algorithm development that
+        now informs how I debug, measure, and improve complex physical systems.
       </p>
     ),
   },
@@ -194,73 +282,96 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: 'April 2024 - May 2025',
-    location: 'wheel.me, Detroit, Michigan',
-    title: 'Robotics Test Engineer',
+    date: 'September 2025 - Present',
+    location: 'Foundation',
+    title: 'Automation & Integration Engineer',
+    companyUrl: 'https://foundation.bot/',
+    context: 'San Francisco company building autonomous humanoid robots.',
     content: (
-      <p>
-        Leveraging expertise in mechatronics and hardware infrastructure to enhance and validate cutting-edge autonomous
-        guided vehicle technology, focusing on optimizing and automating critical processes in robotics systems.
-      </p>
+      <ul className="list-disc space-y-2 pl-5 text-left">
+        <li>
+          Built an end-to-end production tracking system from scratch, combining eDHR and product genealogy,
+          authentication, ACID data logic, retention, test coverage, CI/CD, QC metrics, calibrations, and EOL
+          verification.
+        </li>
+        <li>
+          Led the core software migration from x86 to ARM, adapting low-level system dependencies for NVIDIA Thor
+          onboard compute bring-up.
+        </li>
+        <li>
+          Own technical procurement and vendor integration for production automation, including vision-based QC systems
+          and instrumented treadmills.
+        </li>
+        <li>
+          Automated calibration workflows and built parallel CAN-based flashing that cut firmware upgrades from 1.5
+          hours to under 3 minutes.
+        </li>
+      </ul>
+    ),
+  },
+  {
+    date: 'April 2024 - May 2025',
+    location: 'wheel.me',
+    title: 'Robotics Test Engineer',
+    companyUrl: 'https://www.wheel.me/',
+    context: 'Industrial automation company whose autonomous wheels turn existing carts and fixtures into robots.',
+    content: (
+      <ul className="list-disc space-y-2 pl-5 text-left">
+        <li>
+          Architected Python and Azure diagnostic pipelines to triage autonomous guided vehicle fleet anomalies,
+          reducing system downtime by 20% and manual validation time by 33%.
+        </li>
+        <li>
+          Executed FMEA and nominal-path functional testing for safety-critical mobility, diagnosing CAN failures and
+          cross-domain issues across hardware and software.
+        </li>
+        <li>
+          Verified early hardware/software interfaces and delivered continuous, data-driven feedback that improved
+          system performance, stability, and design decisions.
+        </li>
+      </ul>
     ),
   },
   {
     date: 'June 2022 - April 2024',
-    location: 'Carbon Robotics, Livonia, Michigan',
-    title: 'Robot Bringup Engineer',
+    location: 'Carbon Robotics',
+    title: 'Robot Bring-up Engineer',
+    companyUrl: 'https://carbonrobotics.com/',
+    context: 'Agricultural robotics company building AI-guided laser weed control and tractor autonomy.',
     content: (
-      <p>
-        Spearheaded end-of-line validation and automation for AI-powered robots, reducing bring-up times by 83% through
-        strategic implementation of Python and Bash scripts, while ensuring exceptional stability across software,
-        hardware, and electrical subsystems.
-      </p>
+      <ul className="list-disc space-y-2 pl-5 text-left">
+        <li>
+          Owned system bring-up and end-of-line validation for AI-powered autonomous agricultural robots across
+          mobility, perception, power, and electromechanical subsystems.
+        </li>
+        <li>
+          Rebuilt manufacturing integration workflows with Python and Bash automation, reducing robot bring-up time by
+          83%.
+        </li>
+        <li>
+          Designed custom diagnostic tools and instrumentation, including a Raspberry Pi test jig for sensor and servo
+          characterization.
+        </li>
+      </ul>
     ),
   },
   {
-    date: 'September 2020 - August 2021',
-    location: 'TechSmith Corporation, Okemos, Michigan',
-    title: 'IT Support Engineer',
+    date: 'August 2017 - August 2021',
+    location: 'TechSmith Corporation & Michigan State University',
+    title: 'IT Systems Support Engineer & Technician',
+    context:
+      'Earlier systems and support work at TechSmith—the visual communication software company behind Camtasia and Snagit—and Michigan State University.',
     content: (
-      <p>
-        Managed and optimized multi-site network infrastructure, automating OS and software deployment while providing
-        comprehensive support for hundreds of devices, significantly enhancing operational efficiency and system
-        reliability.
-      </p>
-    ),
-  },
-  {
-    date: 'March 2020 - September 2020',
-    location: 'TechSmith Corporation, Okemos, Michigan',
-    title: 'Technical Support Specialist',
-    content: (
-      <p>
-        Delivered expert-level support for TechSmith products across platforms, collaborating with development teams to
-        address user needs and contributing to product improvement through detailed feedback and documentation.
-      </p>
-    ),
-  },
-  {
-    date: 'May 2019 - March 2020',
-    location: 'TechSmith Corporation, Okemos, Michigan',
-    title: 'IT Specialist Intern',
-    content: (
-      <p>
-        Supported large multi-site network operations, assisted with ticket triage, and contributed to the
-        implementation and maintenance of IT systems and processes, enhancing overall infrastructure efficiency and user
-        experience.
-      </p>
-    ),
-  },
-  {
-    date: 'August 2017 - August 2019',
-    location: 'Michigan State University, East Lansing, MI',
-    title: 'RHS Information Services Technician',
-    content: (
-      <p>
-        Provided comprehensive technical support across the university, troubleshooting and maintaining a diverse range
-        of devices. Delivered exceptional customer service while diagnosing and resolving complex technical issues for
-        staff and faculty.
-      </p>
+      <ul className="list-disc space-y-2 pl-5 text-left">
+        <li>
+          Automated OS deployment and managed network and compute infrastructure, building an early foundation in
+          reliable systems operations and fast cross-functional triage.
+        </li>
+        <li>
+          Partnered with development and QA teams to reproduce user issues, deploy patches, and turn recurring failures
+          into documented, repeatable solutions.
+        </li>
+      </ul>
     ),
   },
 ];

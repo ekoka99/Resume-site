@@ -1,5 +1,5 @@
 import {StaticImageData} from 'next/image';
-import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
+import {FC, ForwardRefExoticComponent, ReactElement, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
 
@@ -21,9 +21,8 @@ export interface HomepageMeta {
  * Hero section
  */
 export interface Hero {
-  imageSrc: string;
   name: string;
-  description: JSX.Element;
+  description: ReactElement;
   actions: HeroActionItem[];
 }
 
@@ -90,7 +89,9 @@ export interface TimelineItem {
   date: string;
   location: string;
   title: string;
-  content: JSX.Element;
+  content: ReactElement;
+  context?: string;
+  companyUrl?: string;
 }
 
 /**

@@ -7,27 +7,24 @@ import {HomepageMeta} from '../../data/dataDef';
 
 const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, description}) => {
   const {asPath: pathname} = useRouter();
+  const siteUrl = 'https://ekoka99.github.io/Resume-site';
+  const canonicalUrl = `${siteUrl}${pathname === '/' ? '/' : pathname}`;
 
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta content={description} name="description" />
-
-        {/* several domains list the same content, make sure google knows we mean this one. */}
-        <link href={`https://reactresume.com${pathname}`} key="canonical" rel="canonical" />
-
-        <link href="/favicon.ico" rel="icon" sizes="any" />
-        <link href="/icon.svg" rel="icon" type="image/svg+xml" />
-        <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
-        <link href="/site.webmanifest" rel="manifest" />
-
-        {/* Open Graph : https://ogp.me/ */}
+        <meta content="index,follow" name="robots" />
+        <meta content="#eef2f6" name="theme-color" />
+        <link href={canonicalUrl} key="canonical" rel="canonical" />
+        <link href="/Resume-site/favicon.ico" rel="icon" sizes="any" />
+        <link href="/Resume-site/site.webmanifest" rel="manifest" />
+        <meta content="website" property="og:type" />
         <meta content={title} property="og:title" />
         <meta content={description} property="og:description" />
-        <meta content={`https://reactresume.com${pathname}`} property="og:url" />
-
-        {/* Twitter: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
+        <meta content={canonicalUrl} property="og:url" />
+        <meta content="summary" name="twitter:card" />
         <meta content={title} name="twitter:title" />
         <meta content={description} name="twitter:description" />
       </Head>

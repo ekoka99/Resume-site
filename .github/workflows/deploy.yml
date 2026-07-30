@@ -4,31 +4,43 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: '18.17.0'
+          node-version: '22'
+          cache: npm
 
       - name: Install dependencies
-        run: |
-          npm cache clean --force
-          rm -f package-lock.json
-          yarn install --frozen-lockfile
+        run: npm ci
 
-      - name: Build
-        run: yarn build
+      - name: Check and build
+        run: npm run check
+
+      - name: Verify export
+        run: |
+          test -f out/index.html
+          test -f out/Elio_Koka_Senior_Systems_Integration.pdf
+          test -f out/robots.txt
+          test -f out/sitemap.xml
+          grep -q "I build and scale robotic systems" out/index.html
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out

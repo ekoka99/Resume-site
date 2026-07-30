@@ -3,20 +3,28 @@ import {FC, memo, ReactNode} from 'react';
 import {TimelineItem as TimelineItemType} from '../../../data/dataDef';
 
 const TimelineItem: FC<{item: TimelineItemType}> = memo(({item}) => {
-  const {title, date, location, content} = item;
+  const {title, date, location, content, context, companyUrl} = item;
 
   return (
-    <div className="flex flex-col pb-8 text-center last:pb-0 md:text-left">
-      <div className="flex flex-col pb-4">
-        <h2 className="text-xl font-bold">{title as ReactNode}</h2>
-        <div className="flex items-center justify-center gap-x-2 md:justify-start">
-          <span className="flex-1 text-sm font-medium italic sm:flex-none">{location}</span>
-          <span>•</span>
-          <span className="flex-1 text-sm sm:flex-none">{date}</span>
-        </div>
+    <article className="timeline-item">
+      <div className="timeline-item__meta">
+        <span>{date}</span>
+        <span>
+          {companyUrl ? (
+            <a href={companyUrl} rel="noreferrer" target="_blank">
+              {location} ↗
+            </a>
+          ) : (
+            location
+          )}
+        </span>
       </div>
-      {content}
-    </div>
+      <div className="timeline-item__body">
+        <h3>{title as ReactNode}</h3>
+        {context && <p className="timeline-item__context">{context}</p>}
+        {content}
+      </div>
+    </article>
   );
 });
 
