@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /500
+
+# Host
+Host: https://ekoka99.github.io/Resume-site
+
+# Sitemaps
+Sitemap: https://ekoka99.github.io/Resume-site/sitemap.xml
